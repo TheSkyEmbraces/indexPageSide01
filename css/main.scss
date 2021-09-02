@@ -267,4 +267,10 @@ body {
     }
 }
 
-@include desktop {}
+@include desktop {
+    .header{
+        .sideMenuToggle{
+            display: none;
+        }
+    }
+}
