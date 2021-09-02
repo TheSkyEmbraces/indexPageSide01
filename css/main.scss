@@ -270,7 +270,7 @@ body {
 @include desktop {
     .header{
         .sideMenuToggle{
-            display: none;
+            display: none !important;
         }
     }
 }
