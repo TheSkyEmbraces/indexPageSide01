@@ -1,0 +1,270 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@import "_mixin";
+@import "_reset";
+
+// 추가, 제거 클래스 모음
+
+.active {
+    transform: translate3d(0, 0, 0) !important;
+}
+
+.sticky {
+    width: 100%;
+    position: fixed !important;
+    background-color: #212529;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.35);
+}
+
+// 메인 시작
+
+body {
+    background-color: #26313c;
+    line-height: 1.5;
+    height: 2000px;
+    font-family: 'Oswald', sans-serif !important;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .main {
+        .header {
+            position: relative;
+            transition: all 0.7s;
+            z-index: 9;
+
+            .wrap {
+                width: 1400px;
+                max-width: 100%;
+                margin: auto;
+                padding: 0 15px;
+                display: flex;
+                justify-content: space-between;
+                .logo {
+                    margin: 0;
+                    padding: 16px 0;
+                    width: 30%;
+                    a {
+                        display: block;
+
+                        img {
+                            display: block;
+                            width: 230px;
+                        }
+                    }
+                }
+
+                .menu {
+                    width: 60%;
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        li {
+                            padding: 16px;
+
+                            a {
+                                font-size: 1.2rem;
+                                color: #ffffff;
+                                padding: 10px 8px 8px 8px;
+                                display: block;
+                                text-transform: uppercase;
+
+                                &:hover {
+                                    color: #24cdd5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sideMenuToggle {
+                position: absolute;
+                width: 40px;
+                padding: 6px;
+                top: 23px;
+                right: 40px;
+
+                span {
+                    display: block;
+                    background-color: #ffffff;
+                    height: 2px;
+                }
+
+                span:nth-child(2) {
+                    margin: 4px 0 4px auto;
+                    width: 75%;
+                    transition: 0.6s all;
+                }
+
+                span:nth-child(3) {
+                    margin-left: auto;
+                    width: 50%;
+                    transition: 0.6s all;
+                }
+
+                &:hover {
+                    span:nth-child(2),
+                    span:nth-child(3) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .sidemenu {
+                position: fixed;
+                top: 0;
+                right: 0 !important;
+                background-color: #3bb78f;
+                background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+                width: 40%;
+                height: 100vh;
+                z-index: 999;
+                padding: 4rem;
+                color: #ffffff;
+                transform: translate3d(100%, 0, 0);
+                transition: transform 0.8s ease-in-out;
+                overflow: hidden;
+
+                &::after{
+                    display: none !important;
+                }
+
+                .close {
+                    height: 30px;
+                    width: 30px;
+                    display: block;
+                    position: absolute;
+                    right: 20px;
+                    top: 24px;
+
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 13px;
+                        height: 28px;
+                        width: 2px;
+                        background: #ffffff;
+                    }
+
+                    &::before {
+                        transform: rotate(45deg) !important;
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg) !important;
+                    }
+                }
+
+                nav {
+                    ul {
+                        padding-top: 30px;
+
+                        li {
+                            padding: 15px 0;
+
+                            a {
+                                font-size: 1.3rem;
+                                color: #ffffff;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+
+                footer {
+                    padding-top: 100px;
+                    font-size: 0.9em;
+                    text-transform: uppercase;
+
+                    .social {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 12px;
+
+                        a {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            transition: all 0.3s linear;
+                            margin-right: 5px;
+                            text-transform: uppercase;
+
+                            i {
+                                color: #ffffff;
+                            }
+                        }
+                    }
+
+                    p {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// keyFrames
+
+
+
+
+// media query
+
+@include mobile {
+    .header {
+        .sidemenu {
+            width: 100% !important;
+
+            nav {
+                ul {
+                    li {
+                        a {
+                            font-size: 1rem !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .wrap {
+            .menu {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .header {
+        .sidemenu {
+            width: 100% !important;
+
+            nav {
+                ul {
+                    li {
+                        a {
+                            font-size: 1rem !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .wrap {
+            .menu {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@include desktop {}

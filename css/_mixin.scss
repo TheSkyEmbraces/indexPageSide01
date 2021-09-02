@@ -1,0 +1,116 @@
+@import "_variables";
+
+
+
+// 반응형 믹스인
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+// float clear 믹스인
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// 백그라운드 스프라이트 이미지처리 믹스인
+
+@mixin background($url, $x, $y, $width, $height) {
+  background-image: url($url);
+  background-position: ($x) ($y);
+  background-size: $width $height;
+}
+
+//줄바꿈 믹스인
+
+@mixin wordWrap {
+	word-break:break-word;
+	word-wrap:break-word;
+}
+
+//화살표 네방향 믹스인
+
+$sqrt_2: 1.41421356237;
+
+@mixin iconBullet($direction, $width, $height, $thick, $color, $display, $position){
+	display: $display;
+	overflow: hidden;
+	position: $position;
+	width: $width;
+	height: $height;
+
+	&:before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		content: '';
+	}
+
+	@if ($direction == 'up' or $direction == 'down') {
+		$size: floor($width/$sqrt_2 - 2*$thick);
+		$rate: 2*$height/$width;
+		$margin-top : round($rate*$size/(2*$sqrt_2));
+
+		&:before {
+			width: $size;
+			height: $size;
+			@if ($rate == 1) {
+				-webkit-transform: translate(-50%, -50%) rotate(45deg);
+				transform: translate(-50%, -50%) rotate(45deg);
+			} @else {
+				-webkit-transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+				transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+			}
+
+			@if ($direction == 'up') {
+				margin-top: $margin-top;
+				border: $thick solid $color;
+				border-width: $thick 0 0 $thick;
+			} @else if ($direction == 'down') {
+				margin-top: - $margin-top;
+				border: $thick solid $color;
+				border-width: 0 $thick $thick 0;
+			}
+		}
+	}  @else if ($direction == 'left' or $direction == 'right') {
+		$size: floor($height/$sqrt_2 - 2*$thick);
+		$rate: 2*$width/$height;
+		$margin-left : round($rate*$size/(2*$sqrt_2));
+
+		&:before {
+			width: $size;
+			height: $size;
+			-webkit-transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+			transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+
+			@if ($direction == 'left') {
+				margin-left: $margin-left;
+				border: $thick solid $color;
+				border-width: 0 0 $thick $thick;
+			}  @else if ($direction == 'right') {
+				margin-left: - $margin-left;
+				border: $thick solid $color;
+				border-width: $thick $thick 0 0;
+			}
+		}
+	}
+}
