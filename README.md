@@ -10,4 +10,10 @@
 3. 미디어 쿼리를 이용하여 특정 크기시 상단 메뉴가 사라지고 버거메뉴가 나오게 만듬
 4. 버거 메뉴 클릭시 메뉴가 펼쳐지는 이벤트 발생.
 
-*1DAY END
+ <img src="README/commit1day.JPG"  width="700" height="370">
+ <img src="README/commit1day_1.JPG"  width="700" height="370">
+ <img src="README/commit1day_2.JPG"  width="700" height="370">
+
+ - 1DAY END
+
+
