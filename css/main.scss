@@ -16,11 +16,34 @@
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.35);
 }
 
+// 스크롤바
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    width: 10px;
+    background: #212529;
+    border-left: 0 silid $mainColor;
+    border-right: 0 solid $mainColor;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #06f8ab, #d4d4d4,deepskyblue);
+    width: 0;
+    height: 35%;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+
 // 메인 시작
 
 body {
     background-color: #26313c;
     line-height: 1.5;
+    height: 2000px;
     font-family: 'Oswald', sans-serif !important;
 
     img {
@@ -41,10 +64,12 @@ body {
                 padding: 0 15px;
                 display: flex;
                 justify-content: space-between;
+
                 .logo {
                     margin: 0;
                     padding: 16px 0;
                     width: 30%;
+
                     a {
                         display: block;
 
@@ -57,9 +82,11 @@ body {
 
                 .menu {
                     width: 60%;
+
                     ul {
                         display: flex;
                         justify-content: space-between;
+
                         li {
                             padding: 16px;
 
@@ -105,6 +132,7 @@ body {
                 }
 
                 &:hover {
+
                     span:nth-child(2),
                     span:nth-child(3) {
                         width: 100%;
@@ -127,7 +155,7 @@ body {
                 transition: transform 0.8s ease-in-out;
                 overflow: hidden;
 
-                &::after{
+                &::after {
                     display: none !important;
                 }
 
@@ -211,6 +239,160 @@ body {
     }
 }
 
+
+// 메인 시작
+
+.home {
+    margin-top: 100px;
+
+    .row {
+        .col-md-6 {
+            .hero-text {
+                font-family: $mainFont;
+
+                .title {
+                    background-color: #0bceaf;
+                    font-size: 14px;
+                    line-height: 24px;
+                    padding: 10px 30px;
+                    border-radius: 20px 20px 20px 0;
+                }
+
+                .name {
+                    font-size: 80px;
+                    letter-spacing: -1px;
+                }
+
+                .designation {
+                    font-size: 30px;
+                }
+
+                .email {
+                    margin-top: 40px !important;
+                    font-family: $mainFont;
+                }
+
+                .social-icons {
+                    a {
+                        margin-right: 30px;
+                        margin-top: 40px;
+                        font-size: 25px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .hero-img {
+                margin-left: 140px;
+                margin-top: -40px;
+
+                .img-border {
+                    height: 400px;
+                    width: 400px;
+                    border: 20px solid rgba(0, 0, 0, 0.07);
+                    margin: 0 auto;
+                    border-radius: 50%;
+
+                    img {
+                        width: 400px;
+                        margin: 0 auto;
+                        float: none;
+                        text-align: center;
+                        border: 20px solid rgba(0, 0, 0, 0.17);
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 메인 중간01
+.about {
+    font-family: $mainFont;
+
+    .container {
+        .row {
+            .gap {
+                margin-left: 90px;
+
+                .tag {
+                    ul {
+                        li {
+                            margin: 0px 6px;
+                            border-radius: 4px;
+                            margin-bottom: 10px;
+                            padding: 4px 0;
+                            display: inline-block;
+
+                            span {
+                                border: 1px solid #0bceaf;
+                                padding: 4px 10px;
+                                border-radius: 4px;
+
+                                &:hover {
+                                    background-color: transparent !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .dowmload-button {
+                    .btn-danger {
+                        background-color: #24cdd5;
+                        color: $mainColor;
+                        padding: 14px 20px;
+                        border: none;
+                        border-radius: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 메인 중간02
+
+.mh-service{
+    font-family: $mainFont;
+    .container{
+        .row{
+            .col-sm-4{
+                .mh-service-item{
+                    padding: 20px;
+                    border-radius: 4px;
+                    font-family: $mainFont;
+                    .fa{
+                        font-size: 30px;
+                        margin-bottom: 30px;
+                        margin-top: 16px;
+                    }
+
+                    .purple-color{
+                        color: #9774fa;
+                    }
+
+                    .iron-color{
+                        color: #ed7256;
+                    }
+
+                    .sky-color{
+                        color: #2796e2;
+                    }
+
+                    h3{
+                        font-family: $mainFont;
+                        margin-bottom: 18px;
+                        font-size: 25px;
+                        line-height: 34px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 // keyFrames
 
 
@@ -267,8 +449,8 @@ body {
 }
 
 @include desktop {
-    .header{
-        .sideMenuToggle{
+    .header {
+        .sideMenuToggle {
             display: none !important;
         }
     }
