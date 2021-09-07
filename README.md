@@ -31,3 +31,38 @@
  <img src="README/commit2day_2.JPG">
 
 - 2DAY END
+
+--------------------------------------------------------------------------
+
+* 2021.09.06 3DAY 메인부분 제작중
+
+1. circle.js를 이용하여 원형 그래프제작
+2. SCSS로 막대그래프 제작
+3. 반응형 작업 완료
+
+* github 잔디심기 나무 모양으로 만들기 위해 올리지 않음.
+
+ <img src="README/commit3day.JPG">
+ <img src="README/commit3day_1.JPG">
+
+- 3DAY END
+
+--------------------------------------------------------------------------
+
+* 2021.09.07 4DAY 작업 끝
+
+1. isotope를 이용하여 포트폴리오 페이지 구분함
+2. 나머지 페이지 제작완료
+3. 부트스트랩을 이용하여 반응형 제작 완료!!!!!!
+
+<img src="README/commit4day.JPG">
+<img src="README/commit4day_1.JPG">
+<img src="README/commit4day_2.JPG">
+<img src="README/commit4day_3.JPG">
+<img src="README/commit4day_4.JPG">
+<img src="README/commit4day_5.JPG">
+
+나머지 페이지 모두 완성!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+끝끝끝끝끝끝끝끝끝끝
+
+- the END
